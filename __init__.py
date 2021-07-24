@@ -1,0 +1,1 @@
+#text cho khong trong 
