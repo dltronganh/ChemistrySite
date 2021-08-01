@@ -1,0 +1,21 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+  <div class="row">
+        {% for lec in lectures %}
+            <div class="col s12 m6">
+              <div class="card brown darken-3">
+                <div class="card-content white-text">
+                  <span class="card-title">{{lec.lecture_title}}</span>
+                  <p style="font-size:70%">Published {{lec.lecture_published}}</p>
+                  <p>{{lec.lecture_content|safe}}</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+{% endblock %} 
