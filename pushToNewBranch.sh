@@ -2,7 +2,7 @@ branchName="master"
 # echo $branchName (stay as master)
 username=$1
 # echo $username (youremail dltronganh)
-Date=`date +%d%m%y_%H:%M`
+Date=`date +%d%m%y_%H%M`
 # echo $date
 branchName=$branchName\_$username\_$Date
 echo $branchName    
