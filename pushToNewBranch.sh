@@ -7,6 +7,9 @@ Date=`date +%d%m%y_%H%M`
 branchName=$branchName\_$username\_$Date
 echo $branchName    
 
+git remote remove origin
+git remote add origin https://github.com/dltronganh/ChemistrySite.git
+
 git init
 git config --global user.email $username@gmail.com
 git add .
