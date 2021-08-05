@@ -1,13 +1,25 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Lecture
+from .models import Lecture,LectureCategory,LectureSeries
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
 from .forms import NewUserForm
+from django.http import HttpResponse
+
+def single_slug(request, single_slug):
+    categories = [c.category_slug for c in LectureCategory.objects.all()]
+    if single_slug in categories:
+      return HttpResponse("{single_slug} is a category")
+
+    lectures = [t.lecture_slug for t in Lecture.objects.all()]
+    if single_slug in lectures:
+      return HttpResponse("{single_slug} is a Lecture")
+
+    return HttpResponse("'{single_slug}' does not correspond to anything we know of!")
 def homepage(request):
     return render(request = request,
-                  template_name='main/home.html',
+                  template_name='main/categories.html',
                   context = {"lectures":Lecture.objects.all})
 
 def register(request):
@@ -56,3 +68,4 @@ def login_request(request):
     return render(request = request,
                     template_name = "main/login.html",
                     context={"form":form})
+
