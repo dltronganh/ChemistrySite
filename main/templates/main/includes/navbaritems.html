@@ -1,0 +1,8 @@
+<li><a href="aboutus">About us</a></li>
+{% if user.is_authenticated %}
+    <li><a href="account">Account</a></li>
+    <li><a href="logout">logout</a></li>
+{% else %}
+    <li><a href="login">Login</a></li>
+    <li><a href="register">Register</a></li>
+{% endif %}
