@@ -35,7 +35,7 @@ def single_slug(request, single_slug):
 
         return render(
             request=request,
-            template_name='main\\post.html',
+            template_name='main/post.html',
             context={
                 "post":this_post,
                 "sidebar": post_from_series,
@@ -48,7 +48,7 @@ def single_slug(request, single_slug):
 def homepage(request):
     return render(  
         request= request,
-        template_name='main\categories.html',
+        template_name='main/categories.html',
         context= {'categories': PostCategory.objects.all}
     )
 
@@ -71,7 +71,7 @@ def register(request):
     form = NewUserForm        
     return render(  
         request=request,
-        template_name= "main\\register.html",
+        template_name= "main/register.html",
         context={"form":form}
     )
 
@@ -99,7 +99,7 @@ def login_request(request):
     form = AuthenticationForm()
     return render(
         request=request,
-        template_name= "main\\login.html",
+        template_name= "main/login.html",
         context={"form":form}
     )
 
