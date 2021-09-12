@@ -1,0 +1,16 @@
+<script>M.toast({html: "tasty!!!",classes:" black rounded", displayLength:2000});</script>
+    <script>M.toast({html: "good job!!!",classes:" black rounded", displayLength:2000});</script>
+    <script>M.toast({html: "enjoy it!!!",classes:" black rounded", displayLength:2000});</script>
+    {% if messages %}
+      {% for message in messages %}
+          {% if message.tags == 'success'%}
+             <script>M.toast({html: "{{messages}}",classes:" black rounded", displayLength:2000});</script>
+          {% elif message.tags == 'info'%}
+             <script>M.toast({html: "{{messages}}",classes:" black rounded", displayLength:2000});</script>
+          {% elif message.tags == 'warning'%}
+             <script>M.toast({html: "{{messages}}",classes:" black rounded", displayLength:2000});</script>
+          {% elif message.tags == 'error'%}
+             <script>M.toast({html: "{{messages}}",classes:" black rounded", displayLength:2000});</script>
+          {% endif %}
+      {% endfor %}
+    {% endif %}

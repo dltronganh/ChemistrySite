@@ -1,0 +1,11 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button style = "background-color:#1F618D" class = "btn btn_outline-info" type = "submit">Login</button>
+    </form>
+    If you don't already have an account, <a href="/login" target = "blank"><strong>register</strong></a> for one.
+
+{% endblock %}

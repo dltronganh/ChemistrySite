@@ -1,0 +1,38 @@
+{% extends "main/header.html" %}
+
+<head>
+  {% load static %}
+  <!-- Prism CSS -->
+  <link href = "{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript for Materialize CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+{% block content %}
+
+    <div class="row">
+      {% for b in blogs %}
+        <div class="col s12 m6">
+            <div class="card white">
+              <div class="card-content black-text">
+                 <span class="card-title">{{b.blog_title}}</span>
+                 <p style="font-size:70%">{{b.blog_published}}</p>
+                 <p>{{b.blog_content}}</p>
+              </div>
+              <div class="card-action">
+                  <a href="#">Visit</a>
+              </div>
+            </div>
+        </div>
+       {% endfor %} 
+
+    </div>
+
+{% endblock %}
+</body>
+
+<!-- Prism JS-->
+<script src="{% static "tinymce/js/prism.js" %}"></script>
